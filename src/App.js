@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './css/App.css';
 
-import Map from './components/googlemaps';
+import Directions from './components/googlemaps';
 import Menu from './components/menu';
 import Yelp from './components/yelp';
 import Form from './components/inquiryform';
-
+import Home from './components/home';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -15,6 +15,7 @@ import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 
+import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 const theme = getMuiTheme({
@@ -62,8 +63,9 @@ class App extends Component {
                          <li><Link to="/form">Form</Link></li>
                      </ul>
                     <Route exact path="/" component={Home}/>
+                    <Route path="/menu" component={Menu}/>
                     <Route path="/form" component={Form}/>
-                    <Route path="/form" component={Form}/>
+                    <Route path="/form" component={Directions}/>
                 </div>
     </BrowserRouter>
             </MuiThemeProvider>
