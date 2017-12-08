@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Container,
-    Row,
-    Col,
-    Jumbotron,
-    Button
-} from 'reactstrap';
+import './css/App.css';
+
+import Map from './components/googlemaps';
+import Menu from './components/menu';
+import Yelp from './components/yelp';
+import Form from './components/inquiryform';
+
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import FlatButton from 'material-ui/FlatButton';
+
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
+const theme = getMuiTheme({
+    palette: {
+        primary1Color: '#E91E63',
+        accent1Color: '#000000',
+
+        textColor: '#000000',
+    },
+    appBar: {
+        height: 30,
+        textColor: '#000000',
+    },
+    IconButton: {
+        height: 50,
+        background: 'logo.svg',
+    },
+});
 
 class App extends Component {
     constructor(props) {
@@ -32,43 +50,24 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
-            <Navbar color="inverse" inverse toggleable>
-        <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-            <Collapse isOpen={this.state.isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-        <NavItem>
-        <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-            </NavItem>
-            </Nav>
-            </Collapse>
-            </Navbar>
-            <Jumbotron>
-            <Container>
-            <Row>
-            <Col>
-            <h1>Welcome to React</h1>
-        <p>
-        <Button
-        tag="a"
-        color="success"
-        size="large"
-        href="http://reactstrap.github.io"
-        target="_blank"
-            >
-            View Reactstrap Docs
-        </Button>
-        </p>
-        </Col>
-        </Row>
-        </Container>
-        </Jumbotron>
-        </div>
-    );
+            <MuiThemeProvider muiTheme={theme}>
+                <AppBar title="Hello"/>
+                <Card>
+                    <CardTitle title="Card title" subtitle="Card subtitle" />
+                </Card>
+    <BrowserRouter>
+                <div>
+                     <ul>
+                         <li><Link to="/">Home</Link></li>
+                         <li><Link to="/form">Form</Link></li>
+                     </ul>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/form" component={Form}/>
+                    <Route path="/form" component={Form}/>
+                </div>
+    </BrowserRouter>
+            </MuiThemeProvider>
+        );
     }
 }
 
