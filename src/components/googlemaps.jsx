@@ -7,7 +7,10 @@ import {Link} from 'react-router-dom';
 export default class Directions extends React.Component{
     render(){
         return(
-            <div>hell directions</div>
+            <div>map</div>
         )
     }
 }
+
+
+
