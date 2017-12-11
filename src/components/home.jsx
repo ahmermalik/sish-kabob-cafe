@@ -8,6 +8,7 @@ export default class Home extends React.Component {
     render() {
         return(
             <div>A taste of Persia</div>
+
         )
     }
 };
