@@ -6,6 +6,7 @@
     "@types/googlemaps": "^3.30.0",
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.0.28",
+    "axios": "^0.17.1",
     "bootstrap": "^4.0.0-beta.2",
     "jquery": "^3.2.1",
     "react": "^16.2.0",
