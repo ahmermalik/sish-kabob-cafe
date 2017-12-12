@@ -38,11 +38,12 @@ export default class Directions extends React.Component{
     render(props){
         return(
             <div>
-                <MyMapComponent isMarkerShown={true}
+                <MyMapComponent2 isMarkerShown={true}
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                                 loadingElement={<div style={{ height: `100%` }} />}
                                 containerElement={<div style={{ height: `400px` }} />}
                                 mapElement={<div style={{ height: `100%` }} />}/>
+            <div> Address: 19965 Katy Fwy, Houston, TX 77094</div>
             </div>
 
         )
