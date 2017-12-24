@@ -39,12 +39,6 @@ const theme = getMuiTheme({
         background: 'logo.svg',
     },
 });
-const sectionStyle = {
-    width: "100%",
-    height: "400px",
-    backgroundImage: `url(${Background})`
-};
-
 
 class App extends Component {
     constructor(props) {
@@ -81,7 +75,7 @@ class App extends Component {
                         <AppBar
                             title={<div className="navTitle" src="/home"><Link to="/">Sish Kabob Cafe Katy</Link></div>}
                             iconElementLeft={this.menu()}></AppBar>
-            <div> <img src={ Background } /> </div>
+
                         <div>
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/menu" component={Food_Menu}/>

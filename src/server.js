@@ -18,6 +18,7 @@ app.get('/', function (request, response, next) {
     axios.get(yelp_api, config)
         .then((results) => {
             response.json(results.data)
+            console.log(results.data);
         })
         .catch(next)
 });

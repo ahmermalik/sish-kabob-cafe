@@ -32,7 +32,7 @@ class MyMapComponent2 extends React.Component {
     }
 }
 
-var Wrapped = withScriptjs(withGoogleMap(MyMapComponent2))
+var Wrapped = withScriptjs(withGoogleMap(MyMapComponent))
 
 export default class Directions extends React.Component{
     render(props){
